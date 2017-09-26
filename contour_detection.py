@@ -12,6 +12,7 @@ mask = cv2.inRange(hsv, np.array([50, 100, 75]), np.array([80, 255, 255]))
 
 # Retrieve a list of contours out of the image
 # Each contour is a list of points, and each list of points forms a complete polygon
+# the second and third arguments don't matter, I don't really know what they do to be honest. Just always use them.
 contours, _ = cv2.findContours(mask, 1, 2)
 
 # Sort the contours by area (so the largest area shapes are first)
@@ -38,9 +39,15 @@ e = 0.1 * cv2.arcLength(target, True)
 target = cv2.approxPolyDP(target, e, True)
 
 # Draw the rectangle on the original image
+# cv2.drawContours takes 5 arguments:
+#   - the image we're drawing on
+#   - the list of contours to draw (drawContours expects to draw multiple contours, which is why we have to wrap target in a list)
+#   - the index of the contour to draw (in the previous list). -1 draws all contours in the list (all 1 contours...).
+#   - the color to draw in (in BGR)
+#   - the thickness of the drawn line
 cv2.drawContours(frame, [target], -1, (0, 255, 0), 3)
 
-# Display the resulting thresholded image
+# Display the resulting frame
 cv2.imshow('frame', frame)
 
 # Wait for user input before closing window
