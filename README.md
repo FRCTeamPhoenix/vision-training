@@ -25,7 +25,7 @@ Environment setup (FOR TRAINING, detailed steps TBD):
   - Normalize the entire image (or possibly only intensity/saturation channels, not sure) to make it robust to lighting changes (note: this is NOT contrast stretching, see [here](https://stackoverflow.com/questions/41118808/difference-between-contrast-stretching-and-histogram-equalization))
   - Threshold the image to identify the target (and maybe come up with an easy way to tune our threshold values? ex. sliders)
   - Morphology to reduce noise (see [here](https://docs.opencv.org/trunk/d9/d61/tutorial_py_morphological_ops.html), we are looking to perform an "open" operation to get rid of small flecks)
-  - **Stretch goal:** perform all of most of these operations on the GPU (must be done using either C++ or Cython, OpenCV 2.4 does not support GPU operations directly through Python)
+  - **Stretch goal:** perform all or most of these operations on the GPU (must be done using either C++ or Cython, OpenCV 2.4 does not support GPU operations directly through Python)
 - Targeting
   - Find the contours in the image
   - Identify whether or not there are target contour(s) in the image. Methods to do this will vary by game
