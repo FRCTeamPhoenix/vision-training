@@ -42,5 +42,6 @@ Environment setup (FOR TRAINING, detailed steps TBD):
 - Accessibility/Debug
   - Ensure code is commented well
   - Log statements everywhere
-  - Coprocessor should host a web server which shows a live feed of the webcam. This will make debugging significantly easier, making it so we don't actually have to connect a monitor to the coprocessor to see what's going on.
+  - Easy configuration is a priority
+  - **Important:** Coprocessor should host a web server which shows a live feed of the webcam. This will make debugging significantly easier, making it so we don't actually have to connect a monitor to the coprocessor to see what's going on.
     - We can use Flask in Python for this, see last year's code ([feed.py](https://github.com/FRCTeamPhoenix/visionworks2017/blob/master/feed.py))
